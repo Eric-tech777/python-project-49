@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-# from brain_games import cli
-from .brain_even import guess_even
+from brain_games import cli
 
 
 def main():
     print('Welcome to the Brain Games!')
-    # cli.welcome_user()
-    guess_even()
+    cli.welcome_user()
 
 
 if __name__ == '__main__':
