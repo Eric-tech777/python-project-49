@@ -10,8 +10,9 @@ def main():
     print(f'Hello, {name}!')
     print('What is the result of the expression?')
     hit_counter = 0
+    flag = True
     
-    while hit_counter < 3:
+    while hit_counter < 3 and flag == True:
         operand1 = random.randint(1, 10)
         operand2 = random.randint(1, 10)
         operation = random.choice(['+', '-', '*'])
@@ -28,7 +29,9 @@ def main():
             print(f"'{user_answer}' is wrong answer ;(.\
  Correct answer was '{right_answer}'.")
             print(f"Let's try again, {name}!")
-    print(f'Congratulations, {name}!')
+            flag = False
+    if flag == True:
+        print(f'Congratulations, {name}!')
 
 
 if __name__ == '__main__':

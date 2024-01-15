@@ -10,7 +10,8 @@ def main():
     print('What number is missing in the progression?')
     
     hit_counter = 0
-    while hit_counter < 3:
+    flag = True
+    while hit_counter < 3 and flag == True:
         chain_start = random.randint(1, 10)
         step = random.randint(1, 10)
         steps_number = 10
@@ -30,7 +31,9 @@ def main():
             print(f"'{user_answer}' is wrong answer ;(.\
  Correct answer was '{right_answer}'.")
             print(f"Let's try again, {name}!")
-    print(f'Congratulations, {name}!')
+            flag = False
+    if flag == True:
+        print(f'Congratulations, {name}!')
 
 
 if __name__ == '__main__':

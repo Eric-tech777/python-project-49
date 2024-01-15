@@ -10,7 +10,8 @@ def main():
     print('Answer "yes" if the number is even, otherwise answer "no".')
     
     hit_counter = 0
-    while hit_counter < 3:
+    flag = True
+    while hit_counter < 3 and flag == True:
         number_to_guess = random.randint(1, 50)
         print(f'Question: {number_to_guess}')
         if number_to_guess % 2 == 0:
@@ -22,10 +23,12 @@ def main():
             print('Correct!')
             hit_counter += 1
         else:
+            flag = False
             print(f"'{user_answer}' is wrong answer ;(.\
  Correct answer was '{right_answer}'.")
             print(f"Let's try again, {name}!")
-    print(f'Congratulations, {name}!')
+    if flag == True:
+        print(f'Congratulations, {name}!')
 
 
 if __name__ == '__main__':
