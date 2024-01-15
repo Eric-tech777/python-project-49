@@ -8,8 +8,8 @@ def main():
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
+    
     hit_counter = 0
-
     while hit_counter < 3:
         number_to_guess = random.randint(1, 50)
         print(f'Question: {number_to_guess}')
@@ -22,7 +22,8 @@ def main():
             print('Correct!')
             hit_counter += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{right_answer}'.")
+            print(f"'{user_answer}' is wrong answer ;(.\
+ Correct answer was '{right_answer}'.")
             print(f"Let's try again, {name}!")
     print(f'Congratulations, {name}!')
 

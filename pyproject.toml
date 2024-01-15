@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "code package of five console games"
 authors = ["Irken Ivaev <ofs.iri@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "brain_games" },]
