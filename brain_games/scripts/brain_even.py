@@ -1,35 +1,19 @@
 #!/usr/bin/env python3
-import random
 import prompt
+from brain_games.games import gear
+from brain_games.games import even
 
 
 def main():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    
-    hit_counter = 0
-    flag = True
-    while hit_counter < 3 and flag == True:
-        number_to_guess = random.randint(1, 50)
-        print(f'Question: {number_to_guess}')
-        if number_to_guess % 2 == 0:
-            right_answer = 'yes'
-        else:
-            right_answer = 'no'
-        user_answer = input('Your answer: ')
-        if user_answer == right_answer:
-            print('Correct!')
-            hit_counter += 1
-        else:
-            flag = False
-            print(f"'{user_answer}' is wrong answer ;(.\
- Correct answer was '{right_answer}'.")
-            print(f"Let's try again, {name}!")
-    if flag == True:
-        print(f'Congratulations, {name}!')
+    print(even.game_task)
+    for i in range(0, 3):
+        question, right_answer = even.game_call_reply()  # запрос и ответ
+        gear.game_gear(question, right_answer, name)
+    print(f'Congratulations, {name}!')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
