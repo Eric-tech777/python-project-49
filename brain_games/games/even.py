@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import random
-
-
-game_task = 'Answer "yes" if the number is even, otherwise answer "no".'
+from brain_games.game_engine import game_gear
+from brain_games.fixed_vals import EVEN_TERMS
 
 
 def game_call_reply():
@@ -12,4 +11,12 @@ def game_call_reply():
         reply = 'yes'
     else:
         reply = 'no'
-    return call, reply  # запрос и верный ответ
+    return call, reply  # Вопрос и правильный ответ
+
+
+def even_game():
+    game_gear(game_call_reply, EVEN_TERMS)  # Старт "движка"
+
+
+def run_game():  # Запуск "игрового модуля" при повторных вызовах
+    return game_call_reply()

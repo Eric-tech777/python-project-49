@@ -5,7 +5,15 @@ description = "code package of five console games"
 authors = ["Irken Ivaev <ofs.iri@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "brain_games" },]
-
+repository = "https://github.com/Eric-tech777/python-project-49"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Intended Audience :: Other Audience",
+  "Environment :: Console",
+  "Operating System :: Unix",
+  ]
+  
 
 [tool.poetry.dependencies]
 python = "^3.11"

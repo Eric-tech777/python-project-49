@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import random
-
-
-game_task = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+from brain_games.game_engine import game_gear
+from brain_games.fixed_vals import PRIME_TERMS
 
 
 def game_call_reply():
@@ -15,4 +14,12 @@ def game_call_reply():
     for element in range(2, number):
         if number % element == 0:
             return call, 'no'
-    return call, 'yes'
+    return call, 'yes'  # Вопрос и правильный ответ
+
+
+def prime_game():
+    game_gear(game_call_reply, PRIME_TERMS)  # Старт "движка"
+
+
+def run_game():  # Запуск "игрового модуля" при повторных вызовах
+    return game_call_reply()
