@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import random
-from brain_games.game_engine import game_gear
-from brain_games.fixed_vals import GCD_TERMS
+
+
+game_task = 'Find the greatest common divisor of given numbers.'
 
 
 def game_call_reply():
@@ -14,11 +15,3 @@ def game_call_reply():
             operand2 = operand2 % operand1
     reply = str(operand1 + operand2)
     return call, reply  # Вопрос и правильный ответ
-
-
-def gcd_game():
-    game_gear(game_call_reply, GCD_TERMS)  # Старт "движка"
-
-
-def run_game():  # Запуск "игрового модуля" при повторных вызовах
-    return game_call_reply()
