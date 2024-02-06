@@ -1,32 +1,38 @@
 #!/usr/bin/env python3
 import random
+NUMBER_1_MINIMUM = 1
+NUMBER_1_MAXIMUM = 100
+NUMBER_2_MINIMUM = 1
+NUMBER_2_MAXIMUM = 100
 
 
 game_task = 'Find the greatest common divisor of given numbers.'
 
 
-def get_output():
-    def numbers_to_game():
-        num1, num2 = random.randint(1, 100), random.randint(1, 100)
-        return num1, num2
+def run_game():
+    num1, num2 = specify_numbers()  # 1
+    question = form_question(num1, num2)  # 2
+    right_answer = specify_gcd(num1, num2)  # 3
+    return question, right_answer
 
-    guess_numbers = numbers_to_game()
 
-    def game_call(num1, num2):
-        call = f'{num1} {num2}'
-        return call
+def specify_numbers():  # 1
+    num1 = random.randint(NUMBER_1_MINIMUM, NUMBER_1_MAXIMUM)
+    num2 = random.randint(NUMBER_2_MINIMUM, NUMBER_2_MAXIMUM)
+    return num1, num2
 
-    question = game_call(*guess_numbers)
 
-    def game_reply(num1, num2):
-        while num1 != 0 and num2 != 0:
-            if num1 > num2:
-                num1 = num1 % num2
-            else:
-                num2 = num2 % num1
-        gcd_of_nums = str(num1 + num2)
-        return gcd_of_nums
+def form_question(number1, number2):  # 2
+    call = f'{number1} {number2}'
+    return call
 
-    reply = game_reply(*guess_numbers)
 
-    return question, reply  # Вопрос и правильный ответ
+def specify_gcd(number1, number2):  # 3
+    while number1 != 0 and number2 != 0:
+        if number1 > number2:
+            number1 = number1 % number2
+        else:
+            number2 = number2 % number1
+
+    gcd_of_numbers = str(number1 + number2)
+    return gcd_of_numbers
